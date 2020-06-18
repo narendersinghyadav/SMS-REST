@@ -27,7 +27,7 @@ public class StudentRestController {
 		return student;
 	}
 	
-	//get grades
+	//get grades by username
 		@GET
 		@Path("/grades/{username}")
 		@Produces(MediaType.APPLICATION_JSON)
