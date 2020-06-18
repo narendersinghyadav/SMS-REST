@@ -23,6 +23,7 @@ import com.flipkart.model.Professor;
 import com.flipkart.model.Student;
 import com.flipkart.service.AdminOperation;
 
+//admin rest controller
 @Path("/admin")
 public class AdminRestController {
 	private static Logger logger=Logger.getLogger(AdminRestController.class);
