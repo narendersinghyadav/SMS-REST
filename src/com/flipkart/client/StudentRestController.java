@@ -14,6 +14,7 @@ import javax.ws.rs.core.Response;
 import com.flipkart.model.Student;
 import com.flipkart.service.StudentOperation;
 
+//student rest controller
 @Path("/student")
 public class StudentRestController {
 	StudentOperation studentoperation =new StudentOperation();

@@ -18,6 +18,7 @@ import com.flipkart.model.Student;
 import com.flipkart.service.ProfessorInterface;
 import com.flipkart.service.ProfessorOperation;
 
+//Professor rest controller
 @Path("/professor")
 public class ProfessorRestClient {
 	private static Logger logger=Logger.getLogger(ProfessorRestClient.class);
@@ -31,23 +32,24 @@ public class ProfessorRestClient {
 		List<Student> studentlist=professoroperation.viewEnrolledStudents(courseid);
 		return studentlist;
 	}
+
 	//view selected courses
-		@GET
-		@Path("/viewselectedcourse/{username}")
-		@Produces(MediaType.APPLICATION_JSON)
-		public List<Course> viewSelectedCourse(@PathParam("username") String username){
-			logger.info("hit get service");
-			List<Course> course=professoroperation.viewSelectedCourse(username);
-			return course;
-		}
-		
+	@GET
+	@Path("/viewselectedcourse/{username}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Course> viewSelectedCourse(@PathParam("username") String username){
+		logger.info("hit get service");
+		List<Course> course=professoroperation.viewSelectedCourse(username);
+		return course;
+	}
+
 	//choose course
-		@POST
-		@Path("/choosecourse/{username}/{courseid}")
-		public Response createStudent(@PathParam("username") String username,@PathParam("courseid") int courseid) {
-			professoroperation.chooseCourse(username, courseid);
-			logger.info("hit post service");
-			String result="Track saved";
-			return Response.status(201).entity(result).build();
-		}
+	@POST
+	@Path("/choosecourse/{username}/{courseid}")
+	public Response createStudent(@PathParam("username") String username,@PathParam("courseid") int courseid) {
+		professoroperation.chooseCourse(username, courseid);
+		logger.info("hit post service");
+		String result="Track saved";
+		return Response.status(201).entity(result).build();
+	}
 }
