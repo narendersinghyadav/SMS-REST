@@ -1,4 +1,4 @@
-package com.flipkart.client;
+package com.flipkart.rest;
 
 import java.util.List;
 
